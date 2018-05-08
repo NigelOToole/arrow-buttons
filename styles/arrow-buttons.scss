@@ -1,0 +1,97 @@
+@import 'mixins';
+@import 'variables';
+
+
+
+
+
+// Button wrapper
+.btn-arrow {
+  display: inline-block;
+
+  margin: 10px; // Test spacing
+}
+
+
+
+// Button directions
+.btn-arrow-right,
+.btn-arrow-left,
+.btn-arrow-both {
+  position: relative;
+  height: $button-height + ($button-border-width*2);
+  border-width: $button-border-width;
+}
+
+.btn-arrow-right {
+  margin-right: $button-arrow-offset-margin;
+  border-width: $button-border-width 0 $button-border-width $button-border-width;
+}
+
+.btn-arrow-left {
+  margin-left: $button-arrow-offset-margin;
+  border-width: $button-border-width $button-border-width $button-border-width 0;
+}
+
+.btn-arrow-both {
+  margin-right: $button-arrow-offset-margin;
+  margin-left: $button-arrow-offset-margin;
+  border-width: $button-border-width 0;
+}
+
+
+
+// Arrow shapes
+.btn-arrow-right::after,
+.btn-arrow-left::before,
+.btn-arrow-both::before,
+.btn-arrow-both::after {
+  content: " ";
+  position: absolute;
+  top: 5px;
+  width: $button-arrow-size;
+  height: $button-arrow-size;
+  padding: inherit;
+
+  // Clip shape if supported
+  @supports (clip-path: $button-arrow-clip-path) {
+    top: 4px;
+    width: $button-arrow-size + $button-border-width*2;
+    // width: calc(1.5em + 4px);
+    height: $button-arrow-size + $button-border-width*2;
+    // height: calc(1.5em + 4px);
+    clip-path: $button-arrow-clip-path;
+  }
+
+  border: inherit;
+  border-width: $button-border-width $button-border-width 0 0;
+  background: inherit;
+}
+
+.btn-arrow-both:before,
+.btn-arrow-right:after {
+  transform: rotate(45deg);
+  right: -#{$button-arrow-offset};
+}
+
+.btn-arrow-left:before,
+.btn-arrow-both:after {
+  transform: rotate(225deg);
+  left: -#{$button-arrow-offset};
+}
+
+
+
+
+// Fixes hover bug on outline buttons
+.btn-outline-theme-black {
+  &.btn-arrow-left, &.btn-arrow-right {
+    color: #fff;
+  }
+}
+
+[class*="btn-outline"]:not(:hover) {
+  &.btn-arrow-right, &.btn-arrow-left {
+    background-color: #000;
+  }
+}

@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Arrow buttons</title>
+
+    <link rel="stylesheet" href="styles/site.css">
+    <link rel="stylesheet" href="styles/arrow-buttons.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cutive+Mono|Lato:300,400">
+  </head>
+
+  <body>
+
+  <header class="header">
+    <div class="container">
+
+      <h1 class="logo-text">Arrow buttons</h1>
+
+      <div class="header--links">
+        <a href="https://github.com/NigelOToole/arrow-buttons/archive/master.zip" class="btn btn-white">Download</a>
+        <a href="https://github.com/NigelOToole/arrow-buttons" target="_blank" rel="noopener" class="btn btn-white">View on GitHub</a>
+      </div>
+    </div>
+  </header>
+
+
+  <div class="demo demo--intro container">
+    <h2>Arrow buttons</h2>
+    <p>Directional arrow shaped buttons that can have an arrow on the left, right or both sides. The button can be used independatly or integrated with Bootstrap 4.</p>
+  </div>
+
+
+  <div class="container demo">
+
+    <h3>Bootstrap 4 integration</h3>
+
+    <div class="bootstrap">
+
+      <!-- <a class="btn btn-primary btn-arrow-left" href="#">More</a>
+      <a class="btn btn-primary btn-arrow-right" href="#">More</a> -->
+      <a class="btn-arrow" href="#"><span class="btn btn-primary btn-arrow-left">More</span></a>
+      <a class="btn-arrow" href="#"><span class="btn btn-primary btn-arrow-right">More</span></a>
+      <a class="btn-arrow" href="#"><span class="btn btn-primary btn-arrow-both">More</span></a>
+
+
+      <a class="btn-arrow" href="#"><span class="btn btn-lg btn-primary btn-arrow-left">More</span></a>
+
+      <br><br>
+
+
+      <button type="button" class="btn btn-primary">Primary</button>
+      <button type="button" class="btn btn-secondary">Secondary</button>
+      <button type="button" class="btn btn-success">Success</button>
+      <button type="button" class="btn btn-danger">Danger</button>
+      <button type="button" class="btn btn-warning">Warning</button>
+      <button type="button" class="btn btn-info">Info</button>
+      <button type="button" class="btn btn-light">Light</button>
+      <button type="button" class="btn btn-dark">Dark</button>
+      <button type="button" class="btn btn-link">Link</button>
+
+      <br><br>
+
+
+      <button type="button" class="btn btn-outline-primary">Primary</button>
+      <button type="button" class="btn btn-outline-secondary">Secondary</button>
+      <button type="button" class="btn btn-outline-success">Success</button>
+      <button type="button" class="btn btn-outline-danger">Danger</button>
+      <button type="button" class="btn btn-outline-warning">Warning</button>
+      <button type="button" class="btn btn-outline-info">Info</button>
+      <button type="button" class="btn btn-outline-light">Light</button>
+      <button type="button" class="btn btn-outline-dark">Dark</button>
+
+      <br><br>
+
+
+      <button type="button" class="btn btn-primary btn-lg">Large button</button>
+      <button type="button" class="btn btn-secondary btn-lg">Large button</button>
+
+      <br><br>
+
+
+      <button type="button" class="btn btn-primary btn-sm">Small button</button>
+      <button type="button" class="btn btn-secondary btn-sm">Small button</button>
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <!-- <div class="container">
+
+    <div class="demo install">
+      <h2>Installation</h2>
+
+<pre>
+<code>$ npm install arrow-buttons --save-dev</code>
+</pre>
+
+    </div>
+
+
+    <div class="demo usage">
+      <h2>Usage</h2>
+
+
+      <h3>Markup</h3>
+
+<pre><code>&lt;div class="direction-reveal"&gt;
+
+  &lt;a href="#" class="direction-reveal__card"&gt;
+    &lt;img src="images/image.jpg" alt="Image" class="img-fluid"&gt;
+
+    &lt;div class="direction-reveal__overlay direction-reveal__anim--in"&gt;
+      &lt;h3 class="direction-reveal__title"&gt;Title&lt;/h3&gt;
+      &lt;p class="direction-reveal__text"&gt;Description text.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/a&gt;
+
+  ...
+
+&lt;/div&gt;
+</code></pre>
+
+
+      <h3>Using other tags</h3>
+
+      <p>The demos use &lt;a&gt; tags for the "direction-reveal__card" but a &lt;div&gt; can be used as below, specifiying the tabindex ensures keyboard navigation works as expected. They can all have a value of 0 and will follow the source order of the divs.</p>
+
+<pre><code>&lt;div class="direction-reveal__card" tabindex="0"&gt;
+  ...
+&lt;/div&gt;
+</code></pre>
+
+
+<h3>Styles</h3>
+
+    <p>Import the styles into your project directly from the node_modules as below or copy the styles into your own project, you will need styles/direction-reveal.scss, styles/_animations.scss and styles/_variables.scss. There is also a compiled CSS file you can use, styles/direction-reveal.css.</p>
+
+<pre><code>@import "node_modules/direction-reveal/styles/direction-reveal.scss";</code></pre>
+
+
+      <h3>Touch support</h3>
+
+      <p>The plugin will detect touch support and reveal the hidden content on first click then follow link on the second click. This can be disabled with the option enableTouch.</p>
+
+
+      <h3>Browser support</h3>
+
+      <p>Supports all modern browsers(Firefox, Chrome and Edge) released as of January 2018. For older browsers you may need to include polyfills for <a href="https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach" target="_blank" rel="noopener">Nodelist.forEach</a>, <a href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList" target="_blank" rel="noopener">Element.classList</a> and <a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="noopener">Passive Event Listeners</a>.</p>
+
+    </div>
+
+
+    <div class="demo">
+      <h2>Demo site</h2>
+      <p>Clone or download from Github.</p>
+
+<pre><code>$ npm install
+$ gulp serve
+</code></pre>
+
+    </div>
+
+  </div> -->
+
+
+  <div class="container">
+    <p>Inspired by <a href="https://github.com/shpoont/bootstrap-arrow-buttons" target="_blank" rel="noopener">Bootstrap arrow buttons</a>.
+    </p>
+  </div>
+
+
+  <footer class="footer">
+    <div class="container">
+      Made by Nigel O Toole <a href="http://www.purestructure.com" target="_blank" rel="noopener">pure structure</a>
+    </div>
+  </footer>
+
+  </body>
+</html>

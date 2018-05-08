@@ -1,0 +1,8 @@
+$button-height: 36px; // Inner height minus borders
+$button-border-width: 1px;
+
+$button-arrow-size: ceil($button-height / sqrt(2));
+$button-arrow-offset: ceil($button-arrow-size/2);
+$button-arrow-offset-margin: ceil($button-arrow-offset * sqrt(2));
+
+$button-arrow-clip-path: polygon(100% 0, 100% 100%, 0 0);
