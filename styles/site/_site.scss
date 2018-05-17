@@ -24,7 +24,7 @@ body {
   font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 18px;
   font-weight: 300;
-  line-height: 1.4;
+  line-height: 1.5;
   color: #333;
   background-color: #fff;
 
@@ -32,6 +32,9 @@ body {
     padding-top: 90px;
   }
 
+
+  background-color: #000;
+  color: #fff;
 }
 
 a {
@@ -150,7 +153,7 @@ strong {
   }
 }
 
-.btn {
+.btn-site {
   display: inline-block;
   text-align: center;
   vertical-align: middle;
@@ -167,13 +170,13 @@ strong {
   }
 }
 
-.btn-white {
+.btn-site-white {
   color: #fff;
   border-color: #fff;
   background-color: transparent;
 }
 
-.install .btn {
+.install .btn-site {
   margin-right: 15px;
   margin-bottom: 15px;
 }

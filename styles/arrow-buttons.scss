@@ -15,30 +15,53 @@
 
 
 // Button directions
-.btn-arrow-right,
 .btn-arrow-left,
+.btn-arrow-right,
 .btn-arrow-both {
   position: relative;
-  height: $button-height + ($button-border-width*2);
+  // height: $button-height + ($button-border-width*2);
   border-width: $button-border-width;
-}
-
-.btn-arrow-right {
-  margin-right: $button-arrow-offset-margin;
-  border-width: $button-border-width 0 $button-border-width $button-border-width;
 }
 
 .btn-arrow-left {
   margin-left: $button-arrow-offset-margin;
-  border-width: $button-border-width $button-border-width $button-border-width 0;
+  border-left-width: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn-arrow-right {
+  margin-right: $button-arrow-offset-margin;
+  border-right-width: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
 }
 
 .btn-arrow-both {
   margin-right: $button-arrow-offset-margin;
   margin-left: $button-arrow-offset-margin;
-  border-width: $button-border-width 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-radius: 0;
 }
 
+.btn-lg {
+  &.btn-arrow-left, &.btn-arrow-both {
+    margin-left: $button-arrow-offset-margin-lg;
+  }
+  &.btn-arrow-right, &.btn-arrow-both {
+    margin-right: $button-arrow-offset-margin-lg;
+  }
+}
+
+.btn-sm {
+  &.btn-arrow-left, &.btn-arrow-both {
+    margin-left: $button-arrow-offset-margin-sm;
+  }
+  &.btn-arrow-right, &.btn-arrow-both {
+    margin-right: $button-arrow-offset-margin-sm;
+  }
+}
 
 
 // Arrow shapes
@@ -46,27 +69,65 @@
 .btn-arrow-left::before,
 .btn-arrow-both::before,
 .btn-arrow-both::after {
-  content: " ";
+  content: "";
   position: absolute;
-  top: 5px;
-  width: $button-arrow-size;
-  height: $button-arrow-size;
-  padding: inherit;
+  margin-top: -#{$button-border-width + $button-size-offset};
+  // top: 5px;
+  // width: $button-arrow-size;
+  // height: $button-arrow-size;
+  // padding: inherit;
 
   // Clip shape if supported
   @supports (clip-path: $button-arrow-clip-path) {
-    top: 4px;
-    width: $button-arrow-size + $button-border-width*2;
+    // top: 4px;
+    // width: $button-arrow-size + $button-border-width*2;
+    // height: $button-arrow-size + $button-border-width*2;
+    width: $button-arrow-size;
+    height: $button-arrow-size;
     // width: calc(1.5em + 4px);
-    height: $button-arrow-size + $button-border-width*2;
     // height: calc(1.5em + 4px);
+
+
     clip-path: $button-arrow-clip-path;
   }
 
   border: inherit;
-  border-width: $button-border-width $button-border-width 0 0;
+  border-width: $button-border-width;
+  // border-width: $button-border-width $button-border-width 0 0;
   background: inherit;
+
+
+
+  // opacity: .8;
+  // background-color: #fff;
 }
+
+
+.btn-lg {
+  &.btn-arrow-right::after,
+  &.btn-arrow-left::before,
+  &.btn-arrow-both::before,
+  &.btn-arrow-both::after {
+    // width: $button-arrow-size-lg + $button-border-width*2;
+    // height: $button-arrow-size-lg + $button-border-width*2;
+    width: $button-arrow-size-lg;
+    height: $button-arrow-size-lg;
+  }
+}
+
+.btn-sm {
+  &.btn-arrow-right::after,
+  &.btn-arrow-left::before,
+  &.btn-arrow-both::before,
+  &.btn-arrow-both::after {
+    // width: $button-arrow-size-sm + $button-border-width*2;
+    // height: $button-arrow-size-sm + $button-border-width*2;
+    width: $button-arrow-size-sm;
+    height: $button-arrow-size-sm;
+  }
+}
+
+
 
 .btn-arrow-both:before,
 .btn-arrow-right:after {
@@ -80,18 +141,40 @@
   left: -#{$button-arrow-offset};
 }
 
+.btn-lg {
+  &.btn-arrow-both:before,
+  &.btn-arrow-right:after {
+    right: -#{$button-arrow-offset-lg};
+  }
+
+  &.btn-arrow-left:before,
+  &.btn-arrow-both:after {
+    left: -#{$button-arrow-offset-lg};
+  }
+}
+
+.btn-sm {
+  &.btn-arrow-both:before,
+  &.btn-arrow-right:after {
+    right: -#{$button-arrow-offset-sm};
+  }
+
+  &.btn-arrow-left:before,
+  &.btn-arrow-both:after {
+    left: -#{$button-arrow-offset-sm};
+  }
+}
 
 
 
 // Fixes hover bug on outline buttons
-.btn-outline-theme-black {
-  &.btn-arrow-left, &.btn-arrow-right {
-    color: #fff;
-  }
-}
 
 [class*="btn-outline"]:not(:hover) {
-  &.btn-arrow-right, &.btn-arrow-left {
+  &.btn-arrow-right, &.btn-arrow-left, &.btn-arrow-both {
     background-color: #000;
+    // background-color: rgba(0,0,0,.5);
+    // &::before, &::after {
+    //   background-color: rgba(0,0,0,.5);
+    // }
   }
 }

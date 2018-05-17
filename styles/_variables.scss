@@ -1,8 +1,27 @@
+$button-border-width: 2px;
+$button-size-offset: 0;
 $button-height: 36px; // Inner height minus borders
-$button-border-width: 1px;
+$button-height-lg: 46px;
+$button-height-sm: 30px;
 
-$button-arrow-size: ceil($button-height / sqrt(2));
-$button-arrow-offset: ceil($button-arrow-size/2);
-$button-arrow-offset-margin: ceil($button-arrow-offset * sqrt(2));
+@if($button-border-width == 1px) {
+  $button-size-offset: 1px;
+}
 
-$button-arrow-clip-path: polygon(100% 0, 100% 100%, 0 0);
+@if($button-border-width = 4px) {
+}
+
+// $button-arrow-size: ceil($button-height / sqrt(2));
+$button-arrow-size: ceil(($button-height + $button-size-offset + ($button-border-width*2)) / sqrt(2));
+$button-arrow-offset: floor(($button-arrow-size) / 2);
+$button-arrow-offset-margin: floor(($button-arrow-size * sqrt(2)) / 2);
+
+$button-arrow-size-lg: ceil(($button-height-lg + $button-size-offset + ($button-border-width*2)) / sqrt(2));
+$button-arrow-offset-lg: floor(($button-arrow-size-lg) / 2);
+$button-arrow-offset-margin-lg: floor(($button-arrow-size-lg * sqrt(2)) / 2);
+
+$button-arrow-size-sm: ceil(($button-height-sm + $button-size-offset + ($button-border-width*2)) / sqrt(2));
+$button-arrow-offset-sm: floor(($button-arrow-size-sm) / 2);
+$button-arrow-offset-margin-sm: floor(($button-arrow-size-sm * sqrt(2)) / 2);
+
+$button-arrow-clip-path: polygon(120% -20%, 100% 100%, 0 0); // Values have an extra 20% to fix a bug on firefox dimming the border
